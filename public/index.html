@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+<head>
+    <meta charset="utf-8"/>
+    <link href="%PUBLIC_URL%/favicon.ico" rel="icon"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="#FFF" name="theme-color"/>
     <meta
-      name="description"
-      content="Web site created using create-react-app"
+            content="Kabeer Auth Platform"
+            name="description"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link href="%PUBLIC_URL%/logo192.png" rel="apple-touch-icon"/>
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="%PUBLIC_URL%/manifest.json" rel="manifest"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,20 +25,49 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <title>Kabeers Auth Platform</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<div account=""
+     appicon="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_my_library_music_48px-512.png"
+     appname="Kabeers Music App"
+     appperms="W3sidGl0bGUiOiJLYWJlZXJzIEF1dGgiLCJpbWFnZSI6Imh0dHBzOi8vd3d3Lm1hdGVyaWFsdWkuY28vbWF0ZXJpYWxJY29ucy9hY3Rpb24vYWNjb3VudF9jaXJjbGVfZ3JleV8xOTJ4MTkyLnBuZyIsImRlc2MiOiJWaWV3IFlvdXIgQWNjb3VudCBBdmF0YXIifSx7InRpdGxlIjoiS2FiZWVycyBBdXRoIiwiaW1hZ2UiOiJodHRwczovL3d3dy5tYXRlcmlhbHVpLmNvL21hdGVyaWFsSWNvbnMvYWN0aW9uL2FjY291bnRfY2lyY2xlX2dyZXlfMTkyeDE5Mi5wbmciLCJkZXNjIjoiUmVhZCBZb3VyIFB1YmxpYyBVc2VybmFtZSJ9LHsidGl0bGUiOiJLYWJlZXJzIEF1dGgiLCJpbWFnZSI6Imh0dHBzOi8vd3d3Lm1hdGVyaWFsdWkuY28vbWF0ZXJpYWxJY29ucy9hY3Rpb24vYWNjb3VudF9jaXJjbGVfZ3JleV8xOTJ4MTkyLnBuZyIsImRlc2MiOiJSZWFkIFlvdXIgUHVibGljIEVtYWlsIEFkZHJlc3MifSx7InRpdGxlIjoiS2FiZWVycyBBdXRoIiwiaW1hZ2UiOiJodHRwczovL3d3dy5tYXRlcmlhbHVpLmNvL21hdGVyaWFsSWNvbnMvYWN0aW9uL2FjY291bnRfY2lyY2xlX2dyZXlfMTkyeDE5Mi5wbmciLCJkZXNjIjoiVmlldyBZb3VyIEFjY291bnQgVXNlciBpZCJ9LHsidGl0bGUiOiJLYWJlZXJzIE11c2ljIiwiaW1hZ2UiOiJodHRwczovL2NkbjMuaWNvbmZpbmRlci5jb20vZGF0YS9pY29ucy9nb29nbGUtbWF0ZXJpYWwtZGVzaWduLWljb25zLzQ4L2ljX215X2xpYnJhcnlfbXVzaWNfNDhweC01MTIucG5nIiwiZGVzYyI6IkdldCBhbmQgUGxheSBTb25ncyBGcm9tIFlvdXIgQWNjb3VudCJ9LHsidGl0bGUiOiJLYWJlZXJzIE11c2ljIiwiaW1hZ2UiOiJodHRwczovL2NkbjMuaWNvbmZpbmRlci5jb20vZGF0YS9pY29ucy9nb29nbGUtbWF0ZXJpYWwtZGVzaWduLWljb25zLzQ4L2ljX215X2xpYnJhcnlfbXVzaWNfNDhweC01MTIucG5nIiwiZGVzYyI6IlNlYXJjaCBGb3IgU29uZyBhbmQgU2F2ZSB0byBZb3VyIEhpc3RvcnkifSx7InRpdGxlIjoiS2FiZWVycyBNdXNpYyIsImltYWdlIjoiaHR0cHM6Ly9jZG4zLmljb25maW5kZXIuY29tL2RhdGEvaWNvbnMvZ29vZ2xlLW1hdGVyaWFsLWRlc2lnbi1pY29ucy80OC9pY19teV9saWJyYXJ5X211c2ljXzQ4cHgtNTEyLnBuZyIsImRlc2MiOiJHZXQgeW91ciBLYWJlZXJzIE11c2ljIEhvbWUgRmVlZCJ9LHsidGl0bGUiOiJLYWJlZXJzIE11c2ljIiwiaW1hZ2UiOiJodHRwczovL2NkbjMuaWNvbmZpbmRlci5jb20vZGF0YS9pY29ucy9nb29nbGUtbWF0ZXJpYWwtZGVzaWduLWljb25zLzQ4L2ljX215X2xpYnJhcnlfbXVzaWNfNDhweC01MTIucG5nIiwiZGVzYyI6IlJlYWQgV3JpdGUgQWNjZXNzIFRvIFlvdXIgS2FiZWVycyBNdXNpYyBIaXN0b3J5In1d"
+     authcode="WiNknsgcAEACl" clientpublic="S565ds6887df646k5Y4f56IOiDWxRXS840lnnmD" id="DataContainer"
+     prompttype="none">
+</div>
+<div id="root"></div>
+<!--
+<div id="DataContainer"
+     prompttype="{{promptType}}"
+     appname="{{appName}}"
+     clientpublic="{{clientPublic}}"
+     authcode="{{authCode}}"
+     appperms="{{appPerms}}"
+     appicon="{{appIcon}}"
+     account="{{account}}">
+</div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    appName: mainElement.getAttribute('appName'),
+    appIcon: mainElement.getAttribute('appIcon'),
+    appPerms: mainElement.getAttribute('appPerms'),
+    appPermsDesc: mainElement.getAttribute('appPermsDesc'),
+
+
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+
+
+
+  valid_auth_code exchange for client_secret encryption key then decrypt key and continue implicit token request
+
+-->
+</body>
 </html>
