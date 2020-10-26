@@ -1,10 +1,10 @@
-//const hostName = `${window.location.protocol}//${window.location.host}`;
-const hostName = `${window.location.protocol}//${window.location.hostname}:3000`;
+const hostName = `${window.location.protocol}//${window.location.host}`;
+//const hostName = `${window.location.protocol}//${window.location.hostname}:3000`;
 
 export const endPoints = {
   authAllow: `${hostName}/auth/allow`,
   authToken: `${hostName}/auth/token`,
-  chooserLoginTest: `${hostName}/auth/user/challenge/chooser_login_verification`,
+  chooserLoginTest: (c) => `${hostName}/auth/user/challenge/chooser_login_verification${c ? "/c" : ""}`,
   getSecretFromHash: `${hostName}/auth/implict_grant_unhash_secret`,
   getUserApps: `${hostName}/users/api/generate_apps_perms`,
   removeOauthApp: `${hostName}/user/api/remove_oauth_app`,
@@ -15,4 +15,5 @@ export const endPoints = {
   UserDevicesSendEmail: `${hostName}/auth/user/devices/verify/email`,
   // Refresh State Persist
   ServerSavedState: (m) => `${hostName}/auth/user/session/state/${m}`,
+  GetClientInfo: `https://json.geoiplookup.io/`,
 };

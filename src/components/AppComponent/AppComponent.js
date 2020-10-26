@@ -8,15 +8,15 @@ import {endPoints} from "../../api/endPoints";
 import {AccountVerificationContext} from "../../contexts/Contexts";
 import {cookies} from "../../functions/Misc/Misc";
 import Settings from "../Settings/Settings.lazy";
+import {pure} from "recompose";
 
 const oauthRedirect = () => {
     window.location.href = endPoints.StartInternalOauthFlow;
-
 };
 const AppComponent = () => {
     const [account, setAccount] = React.useContext(AccountVerificationContext);
     React.useEffect(() => {
-        setAccount(JSON.parse(cookies.getCookie("default_account")));
+        cookies.getCookie("default_account") ? setAccount(JSON.parse(cookies.getCookie("default_account"))) : oauthRedirect();
         //getSavedAccounts().then(accounts => setAccount(accounts[0]));
     }, []);
     return (
@@ -38,4 +38,4 @@ AppComponent.propTypes = {};
 
 AppComponent.defaultProps = {};
 
-export default AppComponent;
+export default pure(AppComponent);

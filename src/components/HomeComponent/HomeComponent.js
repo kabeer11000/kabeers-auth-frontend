@@ -5,7 +5,6 @@ import Container from "@material-ui/core/Container";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import {pure} from "recompose";
-import AttachedDevicesComponent from "../AttachedDevicesComponent/AttachedDevicesComponent.lazy";
 import {AccountVerificationContext} from "../../contexts/Contexts";
 
 const HomeComponent = () => {
@@ -29,8 +28,6 @@ const HomeComponent = () => {
                                 Manage your info, privacy, and security to make Kabeers Network work better for you.
                             </Typography>
                         </div>
-                        <br/>
-                        <AttachedDevicesComponent/>
                     </Container>
                 </div>
             </Grow>

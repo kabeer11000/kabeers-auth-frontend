@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'inline',
     },
     main: {
-        marginTop: theme.spacing(8),
+        marginTop: theme.spacing(3),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -66,12 +66,12 @@ const AccountChooser = (props) => {
 
     const LoginHelper = (account) => {
         setOpen(!open);
-        ChooserLoginTest(account).then(res => res.json())
+        ChooserLoginTest(account, true).then(res => res.json())
             .then(async value => {
                 if (value.status === 69) return (setAccount(account), await Devices.sendUpdateEmail(account), props.handleDeviceVerification(1));
                 if (value.status !== 200) return alert("unKnown Error Code");
                 if (value !== 'Nothing Found') await AddToAccounts(value).then(() => {
-                    setAccount(account);
+                    setAccount(value);
                     props.callNext();
                 });
             })

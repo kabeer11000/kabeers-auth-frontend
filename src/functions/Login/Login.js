@@ -1,8 +1,9 @@
 import {getFormData, getQueryParam} from "../Misc/Misc";
 import {endPoints} from "../../api/endPoints";
 import FingerprintJS from "@fingerprintjs/fingerprintjs";
+import React from "react";
 
-export const Login = async (userdata) => {
+export const Login = async (userdata, embedded = false) => {
     const mainElement = document.getElementById('DataContainer');
     const AppData = {
         authCode: mainElement.getAttribute('authCode'),
@@ -42,19 +43,33 @@ export const Login = async (userdata) => {
     })
         .then((res) => {
             if (!res) return;
-            //alert(JSON.stringify(res));
-            if (getQueryParam('response_type') === "code") window.location.href = res.callback;
+            if (getQueryParam('response_type') === "code") {
+                const e = new URLSearchParams(res.callback);
+                if (embedded) return ({
+                    callback: res.callback.split(/[?#]/)[0],
+                    state: e.get("state"),
+                    nonce: e.get("nonce"),
+                });
+                window.location.href = res.callback;
+            }
             if (getQueryParam('response_type') === "token") {
                 const e = new URLSearchParams(res.callback);
-                getToken().then(t => {
-                    if (t) return window.location.href = `${res.callback.split(/[?#]/)[0]}?token=${encodeURI(JSON.stringify(t))}&nonce=${e.get("nonce")}&state=${e.get("state")}`;
+                return getToken().then(t => {
+                    if (!t) return;
+                    if (embedded) return ({
+                        callback: res.callback.split(/[?#]/)[0],
+                        token: JSON.stringify(t),
+                        state: e.get("state"),
+                        nonce: e.get("nonce"),
+                    });
+                    window.location.href = `${res.callback.split(/[?#]/)[0]}?token=${encodeURI(JSON.stringify(t))}&nonce=${e.get("nonce")}&state=${e.get("state")}`;
                 })
             }
         }).catch(e => {
             return new Error('Error Response');
         });
 };
-export const ChooserLoginTest = async (account) => FingerprintJS.load().then(fp => fp.get().then(details => fetch(endPoints.chooserLoginTest, {
+export const ChooserLoginTest = async (account, c = false) => FingerprintJS.load().then(fp => fp.get().then(details => fetch(endPoints.chooserLoginTest(c), {
     credentials: 'include',
     method: 'POST',
     headers: {
@@ -63,9 +78,14 @@ export const ChooserLoginTest = async (account) => FingerprintJS.load().then(fp 
     },
     timeout: 0,
     body: getFormData({
-        username: account.username,
-        password: account.password,
-        deviceId: details.visitorId
+        deviceId: details.visitorId,
+        ...c ? {
+            user_id: account.user_id,
+            session_token: account.session_token
+        } : {
+            username: account.username,
+            password: account.password,
+        },
     }),
 })));
 
@@ -91,6 +111,14 @@ export const Devices = {
         })
     })
 };
+export const CreateAccount = (account) => FingerprintJS.load().then(fp => fp.get().then(details => fetch(endPoints.GetClientInfo).then(i => i.json()).then(info => fetch(endPoints.CreateAccount, {
+        method: "POST",
+        timeout: 0,
+        headers: {'Accept': 'application/json', "Content-Type": "application/x-www-form-urlencoded"},
+        body: getFormData({...info, ...account, deviceId: details.visitorId})
+    })
+        .then(res => res.json())
+)))
 //
 // const sleep = m => new Promise(r => setTimeout(() => r(m[1]), m[0]));
 //

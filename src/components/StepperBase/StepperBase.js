@@ -12,7 +12,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import HideOnScroll from "../HideOnScroll/HideOnScroll";
 import Link from "@material-ui/core/Link";
 import {pure} from "recompose";
-import withRouter from "react-router-dom/es/withRouter";
+import {withRouter} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,12 +33,10 @@ const StepperBase = (props) => {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set());
-    const steps = getSteps();
 
+    const steps = getSteps();
     const isStepOptional = (step) => false;
-    const isStepSkipped = (step) => {
-        return skipped.has(step);
-    };
+    const isStepSkipped = (step) => skipped.has(step);
 
     const handleNext = () => {
         let newSkipped = skipped;

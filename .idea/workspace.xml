@@ -2,84 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9982aa35-2b81-4b06-914b-d94c1b1e82a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-react-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/endPoints.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountDataComponent/AccountDataComponent.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountDataComponent/AccountDataComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountDataComponent/AccountDataComponent.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountDataComponent/AccountDataComponent.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppBarComponent/AppBarComponent.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppBarComponent/AppBarComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppBarComponent/AppBarComponent.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppBarComponent/AppBarComponent.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppComponent/AppComponent.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppComponent/AppComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppComponent/AppComponent.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppComponent/AppComponent.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AutoRedirectScreen/AutoRedirectScreen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AutoRedirectScreen/AutoRedirectScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AutoRedirectScreen/AutoRedirectScreen.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AutoRedirectScreen/AutoRedirectScreen.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DeviceVerifiyComponent/DeviceVerifiyComponent.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DeviceVerifiyComponent/DeviceVerifiyComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DeviceVerifiyComponent/DeviceVerifiyComponent.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DeviceVerifiyComponent/DeviceVerifiyComponent.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HideOnScroll/HideOnScroll.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HideOnScroll/HideOnScroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HideOnScroll/HideOnScroll.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HideOnScroll/HideOnScroll.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomeComponent/HomeComponent.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomeComponent/HomeComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomeComponent/HomeComponent.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomeComponent/HomeComponent.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LoginLogic/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OauthAppComponent/OauthAppComponent.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OauthAppComponent/OauthAppComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OauthAppComponent/OauthAppComponent.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OauthAppComponent/OauthAppComponent.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OauthAppComponent/OauthAppDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PasswordScreen/PasswordScreen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PasswordScreen/PasswordScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PasswordScreen/PasswordScreen.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PasswordScreen/PasswordScreen.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PermessionsScreen/PermessionsScreen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PermessionsScreen/PermessionsScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PermessionsScreen/PermessionsScreen.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PermessionsScreen/PermessionsScreen.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Settings/Settings.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Settings/Settings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Settings/Settings.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Settings/Settings.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StepperBase/StepperBase.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StepperBase/StepperBase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StepperBase/StepperBase.lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StepperBase/StepperBase.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/contexts/Contexts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/Login/AddToAccounts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/Login/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/Misc/Misc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Group 8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/kauthsdk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/kslogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EmbeddedAccountSystem/EmbeddedAccountSystem.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EmbeddedAccountSystem/EmbeddedAccountSystem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EmbeddedAccountSystem/EmbeddedAccountSystem.lazy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EmbeddedAccountSystem/EmbeddedAccountSystem.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/StorageIndex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sdk/kauthsdk.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endPoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endPoints.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppComponent/AppComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppComponent/AppComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponent/HomeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponent/HomeComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PasswordScreen/PasswordScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PasswordScreen/PasswordScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StepperBase/StepperBase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StepperBase/StepperBase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/Login/AddToAccounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/Login/AddToAccounts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/Login/Login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,12 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="kauth_new_frontend" />
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,7 +50,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -118,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sdk" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -128,6 +67,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\phpstormprojects\kauth_new_frontend\src\sdk" />
+      <recent name="E:\Projects\phpstormprojects\kauth_new_frontend\public" />
       <recent name="E:\Projects\phpstormprojects\kauth_new_frontend\src\components" />
     </key>
   </component>
@@ -146,6 +87,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -161,41 +103,69 @@
       <workItem from="1600578279098" duration="29946000" />
       <workItem from="1600719413431" duration="3518000" />
       <workItem from="1600726421791" duration="13957000" />
-      <workItem from="1603143552740" duration="55965000" />
+      <workItem from="1603143552740" duration="56816000" />
+      <workItem from="1603348177095" duration="7313000" />
+      <workItem from="1603440141643" duration="1914000" />
+      <workItem from="1603443283702" duration="30224000" />
     </task>
+    <task id="LOCAL-00001" summary="Yeh Koi Parhta bhi hai">
+      <created>1603341303533</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603341303533</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Yeh Koi Parhta bhi hai" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yeh Koi Parhta bhi hai" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="431" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600640758038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="431" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1600640758038" />
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603442094521">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1603442094521" />
     <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1603341282874">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603341282874" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1603325533994">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1603621400788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603325533994" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1603325533994">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603621400788" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1603621400788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603325533994" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1603325533993">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603621400788" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1603621400788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603325533993" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1603325533994">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603621400788" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1603621400788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603325533994" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603621400788" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1603444915616">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603444915616" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1600726531921">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -204,13 +174,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="96" width="607" height="536" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603272109102" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1603334730683">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1603443675347">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603334730683" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603338411364">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603443675347" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603506430953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603338411364" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603506430953" />
   </component>
 </project>

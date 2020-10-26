@@ -6,17 +6,16 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {endPoints} from "../../api/endPoints";
-import {getFormData} from "../../functions/Misc/Misc";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogContent from "@material-ui/core/DialogContent";
+import {CreateAccount} from "../../functions/Login/Login";
 
 function Copyright() {
     return (
@@ -62,18 +61,11 @@ export default function SignUpScreen() {
         username_error: false,
         password_error: false,
     });
-    const [authComplete, setAuthComplete] = React.useState();
+    const [authComplete, setAuthComplete] = React.useState(null);
     const handleSubmit = () => {
-        fetch(endPoints.CreateAccount, {
-            method: "POST",
-            timeout: 0,
-            headers: {'Accept': 'application/json', "Content-Type": "application/x-www-form-urlencoded"},
-            body: getFormData(text)
-        })
-            .then(res => res.json())
-            .then(value => setAuthComplete(<div>Authentication Complete <Link
-                href={`/auth/user/verify/${value.token}`}>Verify</Link> account
-                here!</div>))
+        CreateAccount(text).then(value => setAuthComplete(<div>Authentication Complete <Link
+            href={`/auth/user/verify/${value.token}`}>Verify</Link> account
+            here!</div>))
             .catch(e => console.log(e))
     };
     return (
@@ -223,9 +215,6 @@ export default function SignUpScreen() {
                     </Grid>
                 </form>
             </div>
-            <Box mt={5}>
-                <Copyright/>
-            </Box>
         </Container>
     );
 }

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {getQueryParam} from "./functions/Misc/Misc";
+import {getQueryParam, MainElement} from "./functions/Misc/Misc";
 import StepperBase from "./components/StepperBase/StepperBase.lazy";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
@@ -13,6 +13,7 @@ import {AccountVerificationProvider} from "./contexts/Contexts";
 import {createMuiTheme, ThemeProvider} from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppComponent from "./components/AppComponent/AppComponent.lazy";
+import EmbeddedAccountSystem from "./components/EmbeddedAccountSystem/EmbeddedAccountSystem.lazy";
 
 
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
     const handleThemeChange = () => {
         setDarkState(!darkState);
     };
-    const errorPage = (m = 'Invalid Authentication Parameters', d = errorDesc) => (
+    const errorPage = (m = 'Invalid Authentication Parameters', d = errorDesc) => error ? (
         <div>
             <Container component="main" className={'pb-2'} maxWidth="xs">
                 <div className={'errorPage text-center'}
@@ -57,16 +58,24 @@ const App = () => {
                 </div>
             </Container>
         </div>
-    );
+    ) : null;
     useEffect(() => {
         if (getQueryParam('response_type') === 'token' && getQueryParam('client_secret') === null || '' || undefined) return setError(true);
+        if (window.frameElement) {
+            setErrorDesc(<div>Cannot Work When Embedded inside an iframe</div>);
+            setError(true);
+        }
     }, []);
     return (
         <ThemeProvider theme={darkTheme}>
             <CssBaseline/>
             <Router>
+                {
+                    errorPage()
+                }
                 <AccountVerificationProvider>
-                    <Route path={['/auth/authorize', /* "/auth/continue" */]} component={StepperBase}/>
+                    <Route path={['/auth/authorize', /* "/auth/continue" */]}
+                           component={MainElement.getAttribute("embedded") ? EmbeddedAccountSystem : StepperBase}/>
                     <Route path={'/create-account'} component={SignUpScreen}/>
                     <Route exact path={['/home', '/', '/apps', '/profile']}>
                         <AppBarComponent/>
