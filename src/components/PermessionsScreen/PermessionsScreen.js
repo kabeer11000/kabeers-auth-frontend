@@ -6,7 +6,6 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import {pure} from "recompose";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -14,10 +13,10 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
-import {Login} from "../../functions/Login/Login";
+import {AuthAllow} from "../../functions/Login/Login";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import {getQueryParam, MainElement} from "../../functions/Misc/Misc";
+import {MainElement} from "../../functions/Misc/Misc";
 import {AccountVerificationContext} from "../../contexts/Contexts";
 import Slide from "@material-ui/core/Slide";
 
@@ -67,8 +66,8 @@ const PermessionsScreen = (props) => {
 
     const LoginHelper = () => {
         setOpen(!open);
-        Login(account)
-            .catch(e => setOpen(false));
+        AuthAllow(account).catch(() => setOpen(false));
+        //Login(account).catch(e => setOpen(false));
     };
     useEffect(() => {
         document.title = `Allow ${MainElement.getAttribute('appName')} to access your data`;
@@ -130,16 +129,15 @@ const PermessionsScreen = (props) => {
                                 </Typography>
                                 <Typography variant={"body2"}>
                                     You may be sharing sensitive info with this site or app. Learn about
-                                    how {AppData.appName} will handle your data by reviewing its terms of service
-                                    and
-                                    privacy policies. You can always see or remove access in your Kabeers Network
-                                    Account.
+                                    how {AppData.appName}
+                                    will handle your data by reviewing its terms of service and privacy
+                                    policies. You can always see or remove access in your Kabeers Network Account.
                                 </Typography>
                             </div>
                         </CardContent>
                         <CardActions className={'mb-5'}>
                             <Button
-                                onClick={() => window.location.href = `${decodeURIComponent(getQueryParam("redirect_uri"))}?error=access_denied`}
+                                onClick={() => AuthAllow(account, false).then(s => window.location.href = s["redirect_uri"])}
                                 color="secondary"
                                 className={'mx-2'}>
                                 Cancel
@@ -163,4 +161,4 @@ PermessionsScreen.propTypes = {};
 
 PermessionsScreen.defaultProps = {};
 
-export default pure(PermessionsScreen);
+export default React.memo(PermessionsScreen);

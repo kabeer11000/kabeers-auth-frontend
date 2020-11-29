@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Container from "@material-ui/core/Container";
 import {LockOutlined} from "@material-ui/icons";
-import {ChooserLoginTest, Devices} from "../../functions/Login/Login";
+import {ChooserLoginTest, Devices, GetSessionAccounts} from "../../functions/Login/Login";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
@@ -19,8 +19,11 @@ import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {AddToAccounts} from "../../functions/Login/AddToAccounts";
 import {MainElement, UpdateQueryStringParam} from "../../functions/Misc/Misc";
-import {AccountVerificationContext} from "../../contexts/Contexts";
+import {AccountVerificationContext, ReloginDialogContext} from "../../contexts/Contexts";
 import Slide from "@material-ui/core/Slide";
+import Grow from "@material-ui/core/Grow";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import SignedOutDialog from "./SignedOutDialog";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 const AccountChooser = (props) => {
-    const Accounts = localStorage.getItem('accounts') === null ? null : JSON.parse(localStorage.getItem('accounts'));
     const classes = useStyles();
     if (!MainElement) return new Error('Main Element Not Defined');
     const AppData = {
@@ -63,6 +65,12 @@ const AccountChooser = (props) => {
     };
     const [account, setAccount] = React.useContext(AccountVerificationContext);
     const [open, setOpen] = React.useState(false);
+    const [Accounts, setAccounts] = React.useState(null);
+    const [dialog, setDialog] = React.useContext(ReloginDialogContext);
+    const [reloginAccount, setReloginAccount] = React.useState({
+        account: {},
+        open: false
+    });
 
     const LoginHelper = (account) => {
         setOpen(!open);
@@ -79,8 +87,38 @@ const AccountChooser = (props) => {
                 setOpen(false);
             });
     };
+    const HandleSignedOutLogin = (account) => {
+        if (!account) return setDialog({
+            invalidPassword: false,
+            account: {},
+            open: false,
+            loading: false
+        });
+        setDialog({
+            ...dialog,
+            loading: true
+        });
+        ChooserLoginTest(account).then(r => r.ok ? r.json() : null).then((a) => {
+            if (!a) return setDialog({
+                account: account,
+                open: true,
+                invalidPassword: true
+            });
+            setDialog({
+                account: {},
+                open: false,
+                invalidPassword: false
+            });
+            console.log(a);
+            LoginHelper(a);
+        });
+
+    }
     React.useEffect(() => {
         document.title = `Sign in to continue to ${MainElement.getAttribute('appName')}. Choose an Account`;
+        GetSessionAccounts().then(a => {
+            setAccounts(a);
+        });
     }, []);
     return (
         <div className={`AccountChooser`}>
@@ -103,41 +141,53 @@ const AccountChooser = (props) => {
                                     {AppData.appName}
                                 </Typography>
                             </Typography>
-                            <List className={classes.root}>
-                                {
-                                    Accounts.map((account, index) => (
-                                        <React.Fragment key={index}>
-                                            <ListItem style={{minWidth: '100%'}} button alignItems="flex-start"
-                                                      onClick={() => LoginHelper(account)}>
-                                                <ListItemAvatar>
-                                                    <Avatar alt={account.username} src={account.account_image}/>
-                                                </ListItemAvatar>
-                                                <ListItemText
-                                                    primary={account.username}
-                                                    secondary={account.email}
-                                                />
-                                            </ListItem>
-                                            <Divider variant="inset" component="li"/>
-                                        </React.Fragment>
-                                    ))
-                                }
-                                <ListItem alignItems="center" className={"text-center mt-2"}>
-                                    <ListItemText
-                                        primary={
-                                            <React.Fragment>
-                                                <Button className={"w-100"}
-                                                        onClick={() => window.location.href = UpdateQueryStringParam(window.location.href, 'prompt', 'password')}>
-                                                    Add New Account
-                                                </Button>
+                            <Grow in={!!Accounts} unmountOnExit={true} mountOnEnter={true}>
+                                <List className={classes.root}>
+                                    {
+                                        Accounts ? Accounts.map((account, index) => (
+                                            <React.Fragment key={index}>
+                                                <ListItem style={{minWidth: '100%'}} button alignItems="flex-start"
+                                                          onClick={() => !account.signed_in ? setDialog({
+                                                              account: account,
+                                                              open: true,
+                                                              invalidPassword: false
+                                                          }) : LoginHelper(account)}>
+                                                    <ListItemAvatar>
+                                                        <Avatar alt={account.username} src={account.account_image}/>
+                                                    </ListItemAvatar>
+                                                    <ListItemText
+                                                        primary={account.username}
+                                                        secondary={account.email}
+                                                    />
+                                                    <ListItemSecondaryAction style={{
+                                                        paddingBottom: "1.2rem"
+                                                    }}>
+                                                        {!account.signed_in && <ListItemText secondary={"Signed Out"}/>}
+                                                    </ListItemSecondaryAction>
+                                                </ListItem>
+                                                <Divider variant="inset" component="li"/>
                                             </React.Fragment>
-                                        }
-                                    />
-                                </ListItem>
-                            </List>
+                                        )) : null
+                                    }
+                                    <ListItem alignItems="center" className={"text-center mt-2"}>
+                                        <ListItemText
+                                            primary={
+                                                <React.Fragment>
+                                                    <Button className={"w-100"}
+                                                            onClick={() => window.location.href = UpdateQueryStringParam(window.location.href, 'prompt', 'password')}>
+                                                        Add New Account
+                                                    </Button>
+                                                </React.Fragment>
+                                            }
+                                        />
+                                    </ListItem>
+                                </List>
+                            </Grow>
                         </CardContent>
                     </Card>
                 </Slide>
             </Container>
+            <SignedOutDialog onClose={HandleSignedOutLogin}/>
         </div>
     );
 };

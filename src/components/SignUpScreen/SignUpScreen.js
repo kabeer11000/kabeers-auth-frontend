@@ -60,7 +60,7 @@ export default function SignUpScreen() {
         password: '',
         username_error: false,
         password_error: false,
-    });
+    }); //1
     const [authComplete, setAuthComplete] = React.useState(null);
     const handleSubmit = () => {
         CreateAccount(text).then(value => setAuthComplete(<div>Authentication Complete <Link

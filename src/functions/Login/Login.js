@@ -1,8 +1,24 @@
-import {getFormData, getQueryParam} from "../Misc/Misc";
+import {cookies, getFormData, getQueryParam, MainElement, makeBody} from "../Misc/Misc";
 import {endPoints} from "../../api/endPoints";
-import FingerprintJS from "@fingerprintjs/fingerprintjs";
 import React from "react";
+import {Device} from "../Init";
 
+const request = async (a = {}) => fetch(a.url, {...a}).then(res => res.ok ? res.json() : null);
+export const AuthAllow = async (credentials = {username: "", password: ""}, t = true) => {
+    return fetch(t ? endPoints.authAllow : endPoints.GetSessionInfo, {
+        credentials: "include",
+        method: "POST",
+        timeout: 0,
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: getFormData({
+            username: credentials.username,
+            password: credentials.password,
+            id: cookies.getCookie("__kn.auth.session-id") || "7da6c6e6-fe4f-4916-a858-23630da7821c" || MainElement.getAttribute("session_id")
+        })
+    })
+        .then(r => r.json())
+        .then(res => t ? (window.location.href = `${res["redirect_uri"]}?${makeBody(res["redirect_params"])}&${makeBody(res["forward_values"])}&response_type=${res["response_type"]}`) : (res));
+};
 export const Login = async (userdata, embedded = false) => {
     const mainElement = document.getElementById('DataContainer');
     const AppData = {
@@ -43,33 +59,10 @@ export const Login = async (userdata, embedded = false) => {
     })
         .then((res) => {
             if (!res) return;
-            if (getQueryParam('response_type') === "code") {
-                const e = new URLSearchParams(res.callback);
-                if (embedded) return ({
-                    callback: res.callback.split(/[?#]/)[0],
-                    state: e.get("state"),
-                    nonce: e.get("nonce"),
-                });
-                window.location.href = res.callback;
-            }
-            if (getQueryParam('response_type') === "token") {
-                const e = new URLSearchParams(res.callback);
-                return getToken().then(t => {
-                    if (!t) return;
-                    if (embedded) return ({
-                        callback: res.callback.split(/[?#]/)[0],
-                        token: JSON.stringify(t),
-                        state: e.get("state"),
-                        nonce: e.get("nonce"),
-                    });
-                    window.location.href = `${res.callback.split(/[?#]/)[0]}?token=${encodeURI(JSON.stringify(t))}&nonce=${e.get("nonce")}&state=${e.get("state")}`;
-                })
-            }
-        }).catch(e => {
-            return new Error('Error Response');
-        });
+            window.location.herf = `${res.redirect_uri}?${makeBody(res.redirect_params)}`;
+        }).catch(() => new Error('Error Response'));
 };
-export const ChooserLoginTest = async (account, c = false) => FingerprintJS.load().then(fp => fp.get().then(details => fetch(endPoints.chooserLoginTest(c), {
+export const ChooserLoginTest = async (account, c = false) => fetch(endPoints.chooserLoginTest(c), {
     credentials: 'include',
     method: 'POST',
     headers: {
@@ -78,7 +71,7 @@ export const ChooserLoginTest = async (account, c = false) => FingerprintJS.load
     },
     timeout: 0,
     body: getFormData({
-        deviceId: details.visitorId,
+        deviceId: Device.getId(),
         ...c ? {
             user_id: account.user_id,
             session_token: account.session_token
@@ -87,7 +80,7 @@ export const ChooserLoginTest = async (account, c = false) => FingerprintJS.load
             password: account.password,
         },
     }),
-})));
+});
 
 export const Devices = {
     sendUpdateEmail: async account => fetch(endPoints.UserDevicesSendEmail, {
@@ -111,14 +104,23 @@ export const Devices = {
         })
     })
 };
-export const CreateAccount = (account) => FingerprintJS.load().then(fp => fp.get().then(details => fetch(endPoints.GetClientInfo).then(i => i.json()).then(info => fetch(endPoints.CreateAccount, {
+export const CreateAccount = (account) => fetch(endPoints.GetClientInfo).then(i => i.json()).then(info => fetch(endPoints.CreateAccount, {
         method: "POST",
         timeout: 0,
         headers: {'Accept': 'application/json', "Content-Type": "application/x-www-form-urlencoded"},
-        body: getFormData({...info, ...account, deviceId: details.visitorId})
+        body: getFormData({...info, ...account, deviceId: Device.getId()})
     })
         .then(res => res.json())
-)))
+);
+export const GetAuthSessionInfo = () => fetch(endPoints.GetAuthSessionInfo, {method: "post"});
+export const GetSessionAccounts = async (n) => fetch(endPoints.GetActiveSessionAccounts(n), {
+    credentials: 'include',
+    method: "post",
+    headers: {'Accept': 'application/json', "Content-Type": "application/x-www-form-urlencoded"},
+    body: getFormData({
+        deviceId: Device.getId()
+    })
+}).then(d => d.json()).then(a => n ? a[0] : a);
 //
 // const sleep = m => new Promise(r => setTimeout(() => r(m[1]), m[0]));
 //

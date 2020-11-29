@@ -19,6 +19,8 @@ import {Button} from "@material-ui/core";
 import DialogActions from "@material-ui/core/DialogActions";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Switch from "@material-ui/core/Switch";
+import {Change2FA} from "../../functions/Frontend/Settings";
+import {withRouter} from "react-router-dom";
 //import {useSnackbar} from "notistack";
 
 const Settings = (props) => {
@@ -31,7 +33,9 @@ const Settings = (props) => {
         <div className="Settings">
             <AppBar>
                 <Toolbar>
-                    <IconButton>
+                    <IconButton onChange={() => {
+                        props.history.goBack();
+                    }}>
                         <ArrowBack/>
                     </IconButton>
                     <Typography variant={"h6"}>
@@ -66,7 +70,10 @@ const Settings = (props) => {
                                   secondary={"Enable 2 Factor Auth"}/>
                     <ListItemSecondaryAction>
                         <IconButton edge="end" aria-label="delete">
-                            <Switch/>
+                            <Switch defaultChecked={account.two_factor_auth} onChange={(e) => Change2FA({
+                                account: account,
+                                auth: e.target.checked
+                            })}/>
                         </IconButton>
                     </ListItemSecondaryAction>
                 </ListItem>
@@ -104,4 +111,4 @@ Settings.propTypes = {};
 
 Settings.defaultProps = {};
 
-export default Settings;
+export default withRouter(React.memo(Settings));

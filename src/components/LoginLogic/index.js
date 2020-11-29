@@ -11,8 +11,9 @@ import PropTypes from "prop-types";
 import Box from "@material-ui/core/Box";
 import Tabs from "@material-ui/core/Tabs";
 import DeviceVerifyComponent from "../DeviceVerifiyComponent/DeviceVerifiyComponent.lazy";
-import {AccountVerificationContext} from "../../contexts/Contexts";
+import {AccountVerificationContext, ReloginDialogProvider} from "../../contexts/Contexts";
 import withRouter from "react-router-dom/es/withRouter";
+import {StorageIndex} from "../../functions/StorageIndex";
 
 const TabPanel = (props) => {
     const {children, value, index, ...other} = props;
@@ -51,7 +52,7 @@ const LoginLogic = (props) => {
     const handleChange = (newValue) => {
         setValue(newValue);
     };
-    const Accounts = localStorage.getItem('accounts') === null ? null : JSON.parse(localStorage.getItem('accounts'));
+    const Accounts = localStorage.getItem(StorageIndex.accounts) === null ? null : JSON.parse(localStorage.getItem(StorageIndex.accounts));
 
     const errorPage = (m = 'Invalid Authentication Parameters', d = <div>Please Contact Site Owner if Problem Persists.
         If you are owner of this site Please Add Required Parameters for <code>response_type=token</code></div>) => (
@@ -103,7 +104,7 @@ const LoginLogic = (props) => {
                     <AccountChooser {...props} handleDeviceVerification={handleChange}/> :
                     <PasswordScreen {...props} handleDeviceVerification={handleChange}/>;
             case 'none':
-                if (Cookies.get('default_account')) return <AutoRedirectScreen
+                if (Cookies.get(StorageIndex.cookie.KabeersAuthLoggedIn)) return <AutoRedirectScreen
                     handleDeviceVerification={handleChange} {...props}/>;
                 else return Accounts && Accounts.length ?
                     <AccountChooser {...props} handleDeviceVerification={handleChange}/> :
@@ -114,7 +115,7 @@ const LoginLogic = (props) => {
                         Try Clearing Accounts And Signing in Again
                         <br/>
                         <Button onClick={() => {
-                            localStorage.removeItem('accounts');
+                            localStorage.removeItem(StorageIndex.accounts);
                             window.location.reload()
                         }}>
                             Clear
@@ -138,7 +139,9 @@ const LoginLogic = (props) => {
         <React.Fragment>
             <Tabs onChange={handleChange} value={value}/>
             <TabPanel index={0} value={value}>
-                {ChildrenComponents()}
+                <ReloginDialogProvider>
+                    {ChildrenComponents()}
+                </ReloginDialogProvider>
             </TabPanel>
             <TabPanel index={1} value={value}>
                 <DeviceVerifyComponent {...props}/>
