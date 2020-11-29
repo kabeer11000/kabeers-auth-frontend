@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9982aa35-2b81-4b06-914b-d94c1b1e82a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccountChooser/SignedOutDialog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/Frontend/Settings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/Init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kauth_new_frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kauth_new_frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README/3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endPoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endPoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccountChooser/AccountChooser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AutoRedirectScreen/AutoRedirectScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AutoRedirectScreen/AutoRedirectScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginLogic/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginLogic/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PermessionsScreen/PermessionsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PermessionsScreen/PermessionsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Settings/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUpScreen/SignUpScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/Contexts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/Contexts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/StorageIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/StorageIndex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +49,9 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\phpstormprojects\kauth_new_frontend\README" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projects\phpstormprojects\kauth_new_frontend\src\sdk" />
       <recent name="E:\Projects\phpstormprojects\kauth_new_frontend\public" />
@@ -115,7 +102,7 @@
       <workItem from="1606424573655" duration="2161000" />
       <workItem from="1606437567939" duration="30721000" />
       <workItem from="1606600737721" duration="11840000" />
-      <workItem from="1606672419888" duration="1594000" />
+      <workItem from="1606672419888" duration="3025000" />
     </task>
     <task id="LOCAL-00001" summary="Yeh Koi Parhta bhi hai">
       <created>1603341303533</created>
@@ -131,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603683449778</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Aur Polish Karna Baqi hai UI">
+      <created>1606687157361</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606687157361</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +139,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Yeh Koi Parhta bhi hai" />
     <MESSAGE value="Chooser Expire Par Dobara Password Login nahi handle kari hai" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chooser Expire Par Dobara Password Login nahi handle kari hai" />
+    <MESSAGE value="Aur Polish Karna Baqi hai UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aur Polish Karna Baqi hai UI" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -159,30 +154,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1603442094521" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1603683443377">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1606687149527">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603683443377" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606669100802">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606687149527" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606687296655">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606669100802" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606669100801">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606687296655" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606687296654">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606669100801" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606669100801">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606687296654" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606687296654">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606669100801" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606669100802">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606687296654" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606687296655">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606669100802" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606687296655" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1603444915616">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603444915616" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606687287040">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606687287040" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1600726531921">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
